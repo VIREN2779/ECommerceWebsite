@@ -4,7 +4,7 @@ mongoose.set('strictQuery', false);
 const connectDatabase = async () => {
   try {
     // mongoose.set('strictQuery', true);
-    const conn = await mongoose.connect('mongodb+srv://virenpatadiya073:viren1T&P@clusterviren0.7czkwhi.mongodb.net/booking', {
+    const conn = await mongoose.connect('mongodb+srv://virenpatadiya073:<password>@clusterviren0.7czkwhi.mongodb.net/booking', {
       useUnifiedTopology: true,
       useNewUrlParser: true,
     });
