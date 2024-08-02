@@ -24,6 +24,7 @@ const ToastObjects = {
 
 const Header = () => {
   const [keyword, setKeyword] = useState();
+  console.log("setKeyword", setKeyword);
   const dispatch = useDispatch();
   let history = useHistory();
 
@@ -35,19 +36,19 @@ const Header = () => {
   const logoutHandler = () => {
     dispatch(logout());
   };
-  
+
   const submitHandler = (e) => {
     e.preventDefault();
-    if(keyword) {
+    if (keyword) {
       if (keyword) {
         console.log("if")
-      console.log(  history.push(`/search/${keyword?.trim()}`)  );
+        console.log(history.push(`/search/${keyword?.trim()}`));
       } else {
         history.push("/");
         console.log('else');
       }
-    } 
-    else{
+    }
+    else {
       toast.info("Enter Something To Search", ToastObjects);
       // const notify = () => toast.info("Enter Something To Search", {
       //   position: "top-right",
@@ -62,8 +63,9 @@ const Header = () => {
       //   });;
       // notify();
     };
-    
+
   };
+  console.log("submitHandler", submitHandler);
   return (
     <>
       <Toast />
@@ -72,7 +74,7 @@ const Header = () => {
         <div className="Announcement ">
           <div className="container">
             <div className="row">
-               <div className="col-md-6 d-flex align-items-center display-none headerLeftSide">
+              <div className="col-md-6 d-flex align-items-center display-none headerLeftSide">
                 {/* <ToastContainer
                   position="top-right"
                   autoClose={5000}
@@ -86,7 +88,7 @@ const Header = () => {
                   theme="light"
                 />           */}
 
-              </div> 
+              </div>
               <div className=" col-12 col-lg-12 r justify-content-center d-flex align-items-center">
                 <Link to="">
                   <i className=" col fab fa-facebook-f"></i>
@@ -107,7 +109,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Header */}
         <div className="header">
           <div className="container">
@@ -244,11 +246,11 @@ const Header = () => {
                           Logout
                         </Link>
                         <Link
-                            className="dropdown-item"
-                            to="/orders"
-                          >
-                            Orders
-                          </Link>
+                          className="dropdown-item"
+                          to="/orders"
+                        >
+                          Orders
+                        </Link>
                       </div>
                     </div>
                   ) : (

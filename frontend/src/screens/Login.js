@@ -69,7 +69,7 @@ const Login = ({ location, history }) => {
     }, 5000);
 
     return () => clearTimeout(timer);
-  }, [userInfo, history, redirect, error]);
+  }, [userInfo, history, redirect, error, dispatch]);
 
   const submitHandler = ({ email, password }) => {
     console.log(email, password);

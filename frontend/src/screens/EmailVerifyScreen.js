@@ -15,6 +15,7 @@ const EmailVerifyScreen = () => {
             try {
                 const url = `/api/users/${param.id}/verify/${param.token}`;
                 const {data} = await axios.get(url);
+                console.log("data",data);
                 setValidUrl(true)
             } catch(error) {
                 setValidUrl(false)
